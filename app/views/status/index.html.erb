@@ -1,0 +1,8 @@
+<% @status.each do |line| %>
+  <dl>
+    <dt><h2><%= line[0] %></h2></dt>
+    <% line[1].each do |status| %>
+      <dd><%= status %></dd>
+    <% end %>
+  </dl>
+<% end %>
