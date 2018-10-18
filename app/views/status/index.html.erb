@@ -1,8 +1,13 @@
-<% @status.each do |line| %>
-  <dl>
-    <dt><h2><%= line[0] %></h2></dt>
-    <% line[1].each do |status| %>
-      <dd><%= status %></dd>
-    <% end %>
-  </dl>
+<% @status.each do |transport| %>
+  <table style="width:100%">
+    <tr>
+      <th colspan='2'><%= transport[:title] %></th>
+      <% transport[:situations].each do |situation| %>
+        <tr>
+          <td><%= situation[:line] %></td>
+          <td><%= situation[:status] %></td>
+        </tr>
+      <% end %>
+    </tr>
+  </table>
 <% end %>
