@@ -3,6 +3,8 @@ require_relative 'crawlers/train_crawler'
 
 class TransportSituation
   class << self
+    LINE_TITLE_REGEX = /^\w+\ \d+-/
+
     def check_situations
       crawler_list = [SubwayCrawler, TrainCrawler]
 
@@ -16,7 +18,7 @@ class TransportSituation
 
     def situations(crawler)
       crawler.crawl.map do |line, situation|
-        line = line.text.capitalize
+        line = line.text.sub(LINE_TITLE_REGEX, '').capitalize
         situation = situation.text.strip.capitalize
 
         { line: line, status: situation }
