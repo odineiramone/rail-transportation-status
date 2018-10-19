@@ -3,11 +3,12 @@ require_relative 'crawlers/train_crawler'
 
 class TransportSituation
   class << self
-    def status
+    def check_situations
       crawler_list = [SubwayCrawler, TrainCrawler]
 
       crawler_list.map do |crawler|
-        { title: crawler.title, situations: situations(crawler) }
+        situations = situations(crawler)
+        Situations.new(title: crawler.title, situations: situations)
       end
     end
 

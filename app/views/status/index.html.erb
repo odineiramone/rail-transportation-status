@@ -1,11 +1,11 @@
 <% @status.each do |transport| %>
   <table style="width:100%">
     <tr>
-      <th colspan='2'><%= transport[:title] %></th>
-      <% transport[:situations].each do |situation| %>
+      <th colspan='2'><%= transport.title %></th>
+      <% transport.situations.each do |situation| %>
         <tr>
-          <td><%= situation[:line] %></td>
-          <td><%= situation[:status] %></td>
+          <td><%= situation.line %></td>
+          <td><%= situation.status %></td>
         </tr>
       <% end %>
     </tr>
