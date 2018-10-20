@@ -2,10 +2,10 @@
   <table style="width:100%">
     <tr>
       <th colspan='2'><%= transport.title %></th>
-      <% transport.situations.each do |situation| %>
+      <% transport.status.each do |status| %>
         <tr>
-          <td><%= situation.line %></td>
-          <td><%= situation.status %></td>
+          <td><%= status.line %></td>
+          <td><%= status.description %></td>
         </tr>
       <% end %>
     </tr>

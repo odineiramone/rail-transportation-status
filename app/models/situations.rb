@@ -1,8 +1,8 @@
 class Situations
-  attr_reader :title, :situations
+  attr_reader :title, :status
 
-  def initialize(title:, situations:)
+  def initialize(title:, status:)
     @title = title
-    @situations = situations.map { |situation| Situation.new(situation) }
+    @status = status.map { |status| Status.new(status) }
   end
 end

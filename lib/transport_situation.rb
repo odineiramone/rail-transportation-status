@@ -9,19 +9,19 @@ class TransportSituation
       crawler_list = [SubwayCrawler, TrainCrawler]
 
       crawler_list.map do |crawler|
-        situations = situations(crawler)
-        Situations.new(title: crawler.title, situations: situations)
+        status = status(crawler)
+        Situations.new(title: crawler.title, status: status)
       end
     end
 
     private
 
-    def situations(crawler)
-      crawler.crawl.map do |line, situation|
+    def status(crawler)
+      crawler.crawl.map do |line, description|
         line = line.text.sub(LINE_TITLE_REGEX, '').capitalize
-        situation = situation.text.strip.capitalize
+        description = description.text.strip.capitalize
 
-        { line: line, status: situation }
+        { line: line, description: description }
       end
     end
   end
