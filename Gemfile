@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 ruby '2.5.1'
 
 gem 'sinatra'
+gem 'sinatra-contrib'
 gem 'require_all'
 gem 'shotgun'
 gem 'pry'

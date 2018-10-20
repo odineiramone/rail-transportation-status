@@ -10,7 +10,7 @@ class TransportSituation
 
       crawler_list.map do |crawler|
         status = status(crawler)
-        Situations.new(title: crawler.title, status: status)
+        Situation.new(title: crawler.title, status: status)
       end
     end
 

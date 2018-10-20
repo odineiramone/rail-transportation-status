@@ -5,4 +5,11 @@ class Status
     @line = line
     @description = description
   end
+
+  def as_hash
+    {
+      line: line,
+      description: description
+    }
+  end
 end
